@@ -34,10 +34,14 @@ public class Main {
                 break;
         }
 
-        System.out.println("Version selected was: " + srcFolder + ". Copying saves to Skyrim " + destFolder + " folder...");
+        System.out.println("Version selected was Skyrim " + srcFolder + ". Copying saves to Skyrim " + destFolder + " folder...");
 
-        File src = new File("D:\\River\\Documents\\My Games\\Skyrim " + srcFolder + "\\Saves");
-        File dest = new File("D:\\River\\Documents\\My Games\\Skyrim " + destFolder + "\\Saves");
+        Scanner scanner = new Scanner(Main.class.getResourceAsStream("/mygamesfolder.txt"));
+        String myGamesFolder = scanner.nextLine();
+
+
+        File src = new File(myGamesFolder + "\\Skyrim " + srcFolder + "\\Saves");
+        File dest = new File(myGamesFolder + "\\Skyrim " + destFolder + "\\Saves");
 
         FileUtils.copyDirectory(src, dest);
     }
