@@ -21,10 +21,23 @@ public class Main {
             if(checkString(version))
                 System.out.println("Invalid input, try again");
         }
-        System.out.println("Version selected was: " + version);
 
-        File src = new File("D:\\River\\Documents\\___SkyrimTest\\SE");
-        File dest = new File("D:\\River\\Documents\\___SkyrimTest\\VR");
+        String srcFolder = "", destFolder = "";
+        switch(version.toUpperCase()) {
+            case "SE":
+                srcFolder = "Special Edition";
+                destFolder = "VR";
+                break;
+            case "VR":
+                srcFolder = "VR";
+                destFolder = "Special Edition";
+                break;
+        }
+
+        System.out.println("Version selected was: " + srcFolder + ". Copying saves to Skyrim " + destFolder + " folder...");
+
+        File src = new File("D:\\River\\Documents\\My Games\\Skyrim " + srcFolder + "\\Saves");
+        File dest = new File("D:\\River\\Documents\\My Games\\Skyrim " + destFolder + "\\Saves");
 
         FileUtils.copyDirectory(src, dest);
     }
