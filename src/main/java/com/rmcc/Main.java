@@ -44,6 +44,8 @@ public class Main {
         File dest = new File(myGamesFolder + "\\Skyrim " + destFolder + "\\Saves");
 
         FileUtils.copyDirectory(src, dest);
+
+        System.out.println("Complete!");
     }
 
     public static boolean checkString(String version) {
