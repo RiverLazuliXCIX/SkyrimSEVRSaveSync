@@ -42,6 +42,9 @@ public class Main {
         FileUtils.copyDirectory(src, dest);
 
         System.out.println("Complete!");
+        System.out.println("Press enter to close...");
+        Scanner sc = new Scanner(System.in);
+        sc.nextLine();
     }
 
     public static boolean checkString(String version) {
